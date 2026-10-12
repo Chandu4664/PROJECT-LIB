@@ -1,96 +1,33 @@
-# 📚 SmartLib – Smart Library Management System
+# SmartLib — Modern Library Front-End
 
-SmartLib is a web-based library management project designed to make book discovery and library activities easier through a simple, user-friendly interface.
+## Included pages
+- `index.html` — welcome / demo sign-in
+- `dashboard.html` — overview and Reading Consistency tracker
+- `books.html` — book catalogue
+- `smartboard.html` — camera/upload scanner with automatic OCR and book search
+- `mybooks.html` — reading list
+- `reservation.html` — reservations demo
+- `Profile.html` — profile page
 
-## ✨ Features
+## Run the website
+1. Extract the ZIP into a folder.
+2. Open the folder in Visual Studio Code (recommended).
+3. Install the VS Code extension **Live Server**, if it is not installed.
+4. Right-click `index.html` and choose **Open with Live Server**.
+5. Sign in using any valid-looking email and a password of at least 3 characters; this is a front-end demo only.
+6. Open **Smartboard scan**, allow camera permission, and capture a book cover—or upload a photo. Recognition starts automatically.
 
-- 🏠 **Dashboard** – Access the main library features.
-- 📖 **Explore Books** – Browse and discover books.
-- 📚 **My Shelf** – Access your personal book collection.
-- 🗓️ **Reservations** – Manage book reservations.
-- 📷 **Smartboard Book Scanner** – Upload a book cover or capture it using a camera to identify books.
-- 🔎 **Book Recognition** – Uses Optical Character Recognition (OCR) to extract text from book covers.
-- 🌐 **Online Book Search** – Searches for matching books using the Open Library API.
-- 👤 **Profile** – Access the user profile.
-- 🌙 **Dark Theme** – A modern interface with charcoal backgrounds, lime-green accents, and gold highlights.
+## Camera troubleshooting
+- Use Chrome or Edge.
+- Camera access normally requires `https://` or `http://localhost`; opening the HTML as `file://` may block the camera.
+- Click the site controls/lock icon beside the address bar → Camera → Allow, then reload.
+- Close other apps using the camera. If the camera is unavailable, upload an image instead.
 
-## 🛠️ Technologies Used
+## Book recognition notes
+The scanner uses Tesseract.js OCR to read visible text and matches it against the SmartLib sample catalogue, then optionally searches Open Library for online suggestions. It is not a trained visual-AI model and cannot guarantee a correct match for every cover. It needs an internet connection to load OCR and search online. Review the suggestions before relying on them.
 
-- HTML5
-- CSS3
-- JavaScript
-- Tesseract.js – OCR text recognition
-- Open Library API – Online book search
-- Browser MediaDevices API – Camera access
-- GitHub Pages – Website hosting
+## Reading consistency
+The dashboard includes a daily reading log, weekly minutes, a 10-minute daily goal, and a streak counter. Data is stored in your browser's `localStorage` on that device/browser; it is not synced to other devices or accounts. Log your actual reading time to track consistency.
 
-## 📷 Smartboard Book Scanner
-
-The Smartboard scanner helps users identify books from their covers.
-
-### How it works
-
-1. Open the Smartboard page.
-2. Allow camera permission or upload a book-cover image.
-3. Capture the image if using the camera.
-4. Run text recognition to extract readable text.
-5. Review the extracted text and matching book results.
-6. Open the available book-search links to explore more information.
-
-**Note:** Camera access generally requires HTTPS or localhost. If the camera is unavailable, use the image-upload option.
-
-## 🚀 How to Run the Project
-
-1. Download or clone this repository.
-2. Open the project folder.
-3. Open `index.html` in a browser, or run the website using a local development server.
-4. Navigate to the Smartboard page to test the scanner.
-
-For camera functionality, use a secure HTTPS website or localhost and grant camera permission.
-
-## 🌐 Deployment
-
-This project can be hosted using GitHub Pages.
-
-1. Push the project files to a GitHub repository.
-2. Open the repository's **Settings**.
-3. Select **Pages**.
-4. Choose the appropriate branch and root folder.
-5. Save the settings and open the published website.
-
-## 📁 Project Structure
-
-```text
-SmartLib/
-├── index.html
-├── explore.html
-├── shelf.html
-├── reservations.html
-├── smartboard.html
-├── profile.html
-└── README.md
-```
-
-*The filenames shown above are examples; update them to match the actual files in your repository.*
-
-## 🎯 Project Objective
-
-The objective of SmartLib is to provide a convenient digital library interface with book discovery, personal book organization, reservation features, and a smart book-cover scanning experience.
-
-## 🔮 Future Enhancements
-
-- Improve book-cover recognition accuracy.
-- Add user authentication and secure data storage.
-- Connect book reservations to a database.
-- Save scanned books to the user's shelf.
-- Add advanced filters for searching books.
-
-## 👨‍💻 Author
-
-**Chandu A**
-
-BCA – Computer Applications
-
-## 📄 License
-
-This project is intended for educational and learning purposes.
+## Demo limitations
+This is a front-end project. Sign-in, reservations, book lists, and reading logs are browser-side demo features, not connected to a secure backend or library database. Google Fonts, book cover images, Tesseract.js, and Open Library suggestions may require internet access.
